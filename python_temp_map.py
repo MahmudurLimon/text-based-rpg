@@ -1,3 +1,6 @@
+#print with loops
+#Creating the map - initial phase - with a just a recatngle
+
 def function():
     edge=str('.')
     center=str(' ')
