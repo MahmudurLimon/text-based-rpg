@@ -1,7 +1,12 @@
+from mazefall import *
+
 def textBasedMaze():
-   xenter=str(input("Do you want to enter the maze (y/n)?: "))
-   if xenter=="y":
-        print("Welcome to the Cave Monsieur!")
-   else:
-       print("Come back another time!")
+    cave = str(input("Do you want to Enter the Cave (y/n)?: "))
+    if cave.lower() == "y":
+        print(enterCave)
+    elif cave.lower() == "n":
+        print(exitCave)
+    else:
+        print("Error")
+
 textBasedMaze()
