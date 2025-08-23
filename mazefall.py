@@ -1,5 +1,5 @@
 enterCave = "Welcome to the Cave Monsieur!"
-exitCave= "Welcome back another Time Monsieur."
+exitCave= "Come back another Time Monsieur."
 
 harm = {
     "poison":"You have been Poisoned!",
@@ -10,5 +10,6 @@ harm = {
 }
 
 good = {
-    "":""
+    "treasue":"Congrats! You have found a Treasure Chest!",
+    "health":"Congrats! You have Regenerated your Health Monseiur!",
 }
