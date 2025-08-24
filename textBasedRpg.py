@@ -13,23 +13,19 @@ def textBasedMaze():
     playerDir=os.path.join(dirSrc, playerName)
     if not os.path.exists(playerDir):
         os.makedirs(playerDir)
-    
+
     nameFound=False
     maxNum=0
     playerNameLow=playerName.lower()
     for filename in os.listdir(playerDir):
         if filename.endswith(".txt") and playerNameLow in filename.lower():
             nameFound=True
-            playerNameMatch = re.search(rf"{re.escape(playerNameLow)}(\d*)\.txt", filename.
-            lower())
+            playerNameMatch = re.search(rf"{re.escape(playerNameLow)}(\d*)\.txt", filename.lower())
             if playerNameMatch:
                 numString=playerNameMatch.group(1)
                 num=int(numString) if numString.isdigit() else 0
                 if num > maxNum:
                     maxNum=num
-
-            break
-        else:
 
     cave = str(input("Do you want to Enter the Cave (y/n)?: "))
     if cave.lower() == "y":
