@@ -14,6 +14,8 @@ def textBasedMaze():
     if not os.path.exists(playerDir):
         os.makedirs(playerDir)
 
+    cave = str(input("Do you want to Enter the Cave (y/n)?: "))
+
     nameFound=False
     maxNum=0
     playerNameLow=playerName.lower()
@@ -26,10 +28,19 @@ def textBasedMaze():
                 num=int(numString) if numString.isdigit() else 0
                 if num > maxNum:
                     maxNum=num
+                    nameFound=True
+    if nameFound:
+        playerFile=f"{playerName}{maxNum}.txt"
+        playerFileDir=os.path.join(playerDir, playerFile)
+        with open (playerFileDir, "a") as f:
+            f.write(f"{cave}\n")
+    else:
+        playerFile= f"{playerName}{maxNum+1}.txt"
+        playerFileDir=os.path.join(playerDir, playerFile)
+        with open (playerFileDir, "w") as f:
+            f.write(f"{cave}\n")
 
-    cave = str(input("Do you want to Enter the Cave (y/n)?: "))
     if cave.lower() == "y":
-        #with open("", "")
         print(enterCave)
     elif cave.lower() == "n":
         print(exitCave)
