@@ -20,7 +20,7 @@ def cave_file_func():
                     if player_name_num > player_name_num_max:
                         player_name_num_max=player_name_num
                 else:
-                    print(f"{player_name} Folder is Corrupted!") # If a player folder "messi" contains a .txt file with another name "ronaldo1.txt"
+                    print(f"{player_name} Folder is Corrupted!") # If a player folder "messi" contains a .txt file with another player's name "ronaldo1.txt"
             player_name_file=f"{player_name}{player_name_num_max}.txt"
             player_name_file_dir=os.path.join(comb_dir,player_name_file)
             with open (player_name_file_dir, "a") as a:
