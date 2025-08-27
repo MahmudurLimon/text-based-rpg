@@ -14,14 +14,13 @@ def textBasedMaze():
     if not os.path.exists(playerDir):
         os.makedirs(playerDir)
 
-    cave = str(input("Do you want to Enter the Cave (y/n)?: "))
+    cave = str(input("Do you want to enter the cave? (y/n): "))
 
     nameFound=False
     maxNum=0
     playerNameLow=playerName.lower()
     for filename in os.listdir(playerDir):
         if filename.endswith(".txt") and playerNameLow in filename.lower():
-            nameFound=True
             playerNameMatch = re.search(rf"{re.escape(playerNameLow)}(\d*)\.txt", filename.lower())
             if playerNameMatch:
                 numString=playerNameMatch.group(1)
@@ -30,10 +29,17 @@ def textBasedMaze():
                     maxNum=num
                     nameFound=True
     if nameFound:
-        playerFile=f"{playerName}{maxNum}.txt"
-        playerFileDir=os.path.join(playerDir, playerFile)
-        with open (playerFileDir, "a") as f:
-            f.write(f"{cave}\n")
+        contPrev=str(input("Do yoy want to continue your previous exploration monseiur? (y/n): "))
+        if contPrev == "n":
+            playerFile= f"{playerName}{maxNum+1}.txt"
+            playerFileDir=os.path.join(playerDir, playerFile)
+            with open (playerFileDir, "w") as f:
+                f.write(f"{cave}\n")
+        else:
+            playerFile=f"{playerName}{maxNum}.txt"
+            playerFileDir=os.path.join(playerDir, playerFile)
+            with open (playerFileDir, "a") as f:
+                f.write(f"{cave}\n")
     else:
         playerFile= f"{playerName}{maxNum+1}.txt"
         playerFileDir=os.path.join(playerDir, playerFile)
