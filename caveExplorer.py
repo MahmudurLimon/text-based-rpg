@@ -8,10 +8,6 @@ def cave_file_func():
     cur_dir=os.getcwd()
     src_dir=f"/data/player/"
     comb_dir=f"{cur_dir}{src_dir}{player_name}"
-    print(player_name)
-    print(cur_dir)
-    print(src_dir)
-    print(comb_dir)
     if os.path.exists(comb_dir):
         file_name=str(input("Do you Want to Play Saved Game?(y/n): "))
         if file_name == "y":
