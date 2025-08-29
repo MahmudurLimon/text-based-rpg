@@ -1,1 +1,4 @@
 You have Started Your First Cave Exploration.
+y
+l
+r

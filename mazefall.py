@@ -1,6 +1,8 @@
 enterCave = "Welcome to the Cave Monsieur!"
 exitCave= "Come back another Time Monsieur."
+error= "Please Enter Valid Characters 'y' or 'n'."
 
+neutral="You are Venturing deep into the Cave Monsieur."
 harm = {
     "poison":"You have been Poisoned!",
     "well":"You've fell into a Well!",
@@ -10,6 +12,6 @@ harm = {
 }
 
 good = {
-    "treasue":"Congrats! You have found a Treasure Chest!",
+    "treasure":"Congrats! You have found a Treasure Chest!",
     "health":"Congrats! You have Regenerated your Health Monseiur!",
 }
