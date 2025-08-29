@@ -75,34 +75,40 @@ def cave_file_func():
         print(error) """
 
 def cave_exploration_func(player_name_file_dir):
-    cave_input=str(input("Do you want to enter the cave? (y/n): "))
-    arr.append(cave_input)
-    if cave_input == "y":
-        print(enterCave)
-        cave_input=str(input("Which Way do you want to Go? Left or Forward?(l/f): "))
+    while True:
+        cave_input=str(input("Do you want to enter the cave? (y/n): "))
         arr.append(cave_input)
-        if cave_input == "l":
-            print(good["treasure"])
-            cave_input=str(input("There's only one Way to go, Right.(r): "))
-            arr.append(cave_input)
-            if cave_input == "r":
-                print(neutral)
-            else:
-                print(error)
-                arr.remove(cave_input)
+        if cave_input == "y":
+            print(enterCave)
+            while True:
+                cave_input=str(input("Which Way do you want to Go? Left or Forward?(l/f): "))
+                arr.append(cave_input)
+                if cave_input == "l":
+                    print(good["treasure"])
+                    while True:
+                        cave_input=str(input("There's only one Way to go, Right.(r): "))
+                        arr.append(cave_input)
+                        if cave_input == "r":
+                            print(neutral)
+                            break
+                        else:
+                            print(error)
+                            arr.remove(cave_input)
+                    break
+                elif cave_input == "f":
+                    print(harm["deadend"])
+                else:
+                    print(error)
+                    arr.remove(cave_input)
+            break
         elif cave_input == "n":
-            print(harm["deadend"])
+            print(exitCave)
         else:
             print(error)
             arr.remove(cave_input)
-    elif cave_input == "n":
-        print(exitCave)
-    else:
-        print(error)
-        arr.remove(cave_input)
-    with open(player_name_file_dir, "a") as a:
-        for data in arr:
-            a.write(str(data)+"\n")
+        with open(player_name_file_dir, "a") as a:
+            for data in arr:
+                a.write(str(data)+"\n")
 
 """  cave_input=str(input("Do you want to enter the cave? (y/n): "))
     arr.append(cave_input)

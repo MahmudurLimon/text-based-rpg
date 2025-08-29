@@ -1,6 +1,6 @@
 enterCave = "Welcome to the Cave Monsieur!"
 exitCave= "Come back another Time Monsieur."
-error= "Please Enter Valid Characters 'y' or 'n'."
+error= "Please Enter Valid Characters."
 
 neutral="You are Venturing deep into the Cave Monsieur."
 harm = {
