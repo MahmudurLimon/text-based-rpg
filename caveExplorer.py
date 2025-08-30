@@ -110,15 +110,5 @@ def cave_exploration_func(player_name_file_dir):
             for data in arr:
                 a.write(str(data)+"\n")
 
-"""  cave_input=str(input("Do you want to enter the cave? (y/n): "))
-    arr.append(cave_input)
-    if cave_input == "y":
-        print(enterCave)
-    elif cave_input == "n":
-        print(exitCave)
-    else:
-        print(error)
-        arr.remove(cave_input) """
-
 player_name_file_dir=cave_file_func()
 cave_exploration_func(player_name_file_dir)
